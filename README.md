@@ -18,7 +18,7 @@ pip3 install .
 ```
 from vrsegment import Segmentor
 
-Segmentor.segment(sentence) # one Thai sentence as an argument, return list of segmented words
-
-Segmentor.test()            # show testing word segmentation by using default test set
+Segmentor.segment(sentence) # Thai sentence as an argument, return a list of segmented words
+Segmentor.check(word)       # To check whether the word is the dictionary or not
+Segmentor.test()            # To show word segmentation testing by using default test set
 ```
