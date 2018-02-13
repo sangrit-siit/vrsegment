@@ -16,7 +16,7 @@ python get-pip.py
 
 Clone this repository
 ```
-https://github.com/sangrit-siit/vrsegment.git
+git clone https://github.com/sangrit-siit/vrsegment.git
 ```
 
 Install this package
