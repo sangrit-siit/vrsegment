@@ -21,6 +21,7 @@ git clone https://github.com/sangrit-siit/vrsegment.git
 
 Install this package
 ```
+cd vrsegment
 pip3 install .
 ```
 
