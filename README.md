@@ -2,14 +2,23 @@
 
 Word Segmentation Project for CSS432
 
-## Prerequisites
-Python >=3.6.4
-
 ### Installing
+
+## Prerequisites
+
+* [Python 3.6.4](https://www.python.org)
+
+Install pip
+```
+python get-pip.py
+```
+
 Clone this repository
 ```
 https://github.com/sangrit-siit/vrsegment.git
 ```
+
+Install this package
 ```
 pip3 install .
 ```
