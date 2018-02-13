@@ -27,11 +27,11 @@ pip3 install .
 
 ## Usage
 ```
-from vrsegment import Segmentor
+from vrsegment
 
-Segmentor.segment(sentence) # Thai sentence as an argument, return a list of segmented words
-Segmentor.check(word)       # To check whether the word is the dictionary or not
-Segmentor.test()            # To show word segmentation testing by using default test set
+vrsegment.test()                # To show word segmentation testing by using default test set
+vrsegment.forwardCut(sentence)  # To perform forward segmentation on a sentence argument
+vrsegment.backwardCut(sentence) # To perform backward segmentation on a sentence argument
 ```
 
 ## Project Members
