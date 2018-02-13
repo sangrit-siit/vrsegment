@@ -77,6 +77,8 @@ def backwardCut(sentence):
         # word not found in dictionary skip one char and retry
 
     # return [left,word,right]
+    if type(sentence) is not list :
+        sentence = [sentence,"",""]
 
     [inleft, inskipword, inright] = sentence
     max_word = ''
@@ -106,7 +108,8 @@ def backwardCut(sentence):
             #print("Left = "+left+" word = "+word)
             return [backwardCut([left,'','']),skipword,right]
         except IndexError:
-            print("DONE")
+            pass
+            #print("DONE")
 
 def recursivePrint(sentencelist,string):
     [left, skipword, right] = sentencelist
