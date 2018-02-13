@@ -2,9 +2,9 @@
 
 Word Segmentation Project for CSS432
 
-### Installing
+## Installing
 
-## Prerequisites
+### Prerequisites
 
 * [Python 3.6.4](https://www.python.org)
 
@@ -23,7 +23,7 @@ Install this package
 pip3 install .
 ```
 
-### Usage
+## Usage
 ```
 from vrsegment import Segmentor
 
