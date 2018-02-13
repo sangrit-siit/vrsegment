@@ -4,13 +4,13 @@ import os.path
 import sys
 import json
 
-dictionary_file_path = "src/thai-wordlist.json"
+dictionary_file_path = "src/corpus/thai-wordlist.json"
 dictionary_file  = open(dictionary_file_path,'r')
 dictionary = json.load(dictionary_file)
 
-test_set_file = "src/test_set.txt"
+test_set_file = "src/test/test_set.txt"
 
-key_set_file = "src/key_set.txt"
+key_set_file = "src/key/key_set.txt"
 
 
 #import pickle
