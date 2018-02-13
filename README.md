@@ -11,7 +11,7 @@ Word Segmentation Project for CSS432
 
 pip installation
 ```
-python get-pip.py
+python3 get-pip.py
 ```
 
 Clone this repository
