@@ -62,6 +62,7 @@ def forwardCut(sentence):
             list_position.append(position[-1])
             #end if
         #end for
+        #print(answer)
     #end while
     if i != start:
         list_answer.append(sentence[start:])
@@ -69,6 +70,11 @@ def forwardCut(sentence):
 #end def
 
 def backwardCut(sentence):
+    cuttedSentence = performBackwardCut(sentence)
+    ans = recursiveDecompose(cuttedSentence)
+    return ans
+
+def performBackwardCut(sentence):
     #reverse the sentence
 
     # search from back of the string (front of reversed)
@@ -102,7 +108,7 @@ def backwardCut(sentence):
         skipword = ''
         right = max_word
         #print("Left = "+left+" word = "+word)
-        return [backwardCut([left,'','']),skipword,right]
+        return [performBackwardCut([left,'','']),skipword,right]
     else:
         ## not found in dictionary or done
         try:
@@ -110,14 +116,25 @@ def backwardCut(sentence):
             skipword = inleft[-1]
             right = ''
             #print("Left = "+left+" word = "+word)
-            return [backwardCut([left,'','']),skipword,right]
+            return [performBackwardCut([left,'','']),skipword,right]
         except IndexError:
             pass
             #print("DONE")
 
-def recursivePrint(sentencelist,string):
+def recursiveDecompose(sentencelist,ans=[]):
+
+    ans = [] if len(ans)==0 else ans
+
     [left, skipword, right] = sentencelist
-    if(type(left) == type(['1'])):
+
+    if right is not None and right != '':
+        ans.insert(0,right)
+    if skipword is not None and skipword != '':
+        ans.insert(0,skipword)
+    if left is not None:
+        recursiveDecompose(left,ans)
+    return ans
+    '''if(type(left) is not list):
         if(skipword == ''):
             if(string[0] == '|'):
                 recursivePrint(left,"|"+right+string)
@@ -128,7 +145,7 @@ def recursivePrint(sentencelist,string):
     else:
         ## print back
         print(right+"|"+string)
-
+    '''
 def test():
     print("Testing VRSegment")
 
@@ -140,12 +157,11 @@ def test():
             sentence = line.strip("\n")
             key = key_file.readline().strip("\n")
             forwardCutted = forwardCut(sentence)
-            backwardCutted = backwardCut([sentence,'',''])
+            backwardCutted = backwardCut(sentence)
             print(">> input:\t"+sentence)
             print(">> key:\t\t"+key)
             print(">> output 1:\t"+"|".join(forwardCutted))
-            print(">> output 2:\t",end="")
-            recursivePrint(backwardCutted,"|")
+            print(">> output 2:\t"+"|".join(backwardCutted))
             print()
         #end for
         test_file.close()
