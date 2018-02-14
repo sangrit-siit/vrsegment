@@ -4,13 +4,13 @@ import os.path
 import sys
 import json
 
-dictionary_file_path = "src/corpus/dictionary.json"
+dictionary_file_path = "../src/corpus/dictionary.json"
 dictionary_file  = open(dictionary_file_path,'r')
 dictionary = json.load(dictionary_file)
 
-test_set_file = "src/test/test_set.txt"
+test_set_file = "../src/test/test_set.txt"
 
-key_set_file = "src/key/key_set.txt"
+key_set_file = "../src/key/key_set.txt"
 
 def check(word):
     global dictionary
@@ -32,18 +32,22 @@ def forwardCut(sentence):
         end = start
         for j in range(i, len(sentence) + 1):
             word = sentence[i:j]
+            #print(sentence[i:j])
             if check(word):
                 #print(word)
                 last_word = ""
                 if len(answer) != 0:
                     last_word = answer.pop()
                     position = position.pop()
-                if i != start:
+                    #print("pop: "+last_word)
+                elif i != start:
+                    '''
                     try:
                         list_answer.pop()
                         list_position.pop()
                     except IndexError:
                         pass
+                    '''
                     list_answer.append(sentence[start:i])
                     list_position.append(i)
                 answer.append(word)
