@@ -1,6 +1,8 @@
 
 # OVERVIEW : vrsegment
 
+![myimg1](https://image.ibb.co/ngx16S/Screen_Shot_2018_02_15_at_21_31_04.png)
+
 vrsegment is a python library for Thai word segmentation.
 This library consists of 
 
