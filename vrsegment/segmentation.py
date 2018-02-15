@@ -4,13 +4,13 @@ import os.path
 import sys
 import json
 
-dictionary_file_path = "src/corpus/dictionary.json"
+dictionary_file_path = "../src/corpus/dictionary.json"
 dictionary_file  = open(dictionary_file_path,'r')
 dictionary = json.load(dictionary_file)
 
-test_set_file = "src/test/test_set.txt"
+test_set_file = "../src/test/test_set.txt"
 
-key_set_file = "src/key/key_set.txt"
+key_set_file = "../src/key/key_set.txt"
 
 def check(word):
     global dictionary
@@ -146,6 +146,16 @@ def recursiveDecompose(sentencelist,ans=[]):
         ## print back
         print(right+"|"+string)
     '''
+def calculateAcc(key,output):
+    num_key = len(key)
+    num_output = len(output)
+    match_words = [word for word in output if word in key]
+    if (len(match_words)/num_key<(len(match_words)/num_output)):
+        return len(match_words)/num_key*100
+    else:
+        return len(match_words)/num_output*100
+
+
 def test():
     print("Testing VRSegment")
 
@@ -153,17 +163,30 @@ def test():
         test_file = open(test_set_file, 'r',encoding="UTF-8")
         key_file  = open(key_set_file, 'r',encoding="UTF-8")
         num_lines = len(open(test_set_file).readlines())
+        forward_avg = 0
+        backward_avg = 0
         for line in test_file:
             sentence = line.strip("\n")
             key = key_file.readline().strip("\n")
+            keyCutted = key.split("|")
             forwardCutted = forwardCut(sentence)
             backwardCutted = backwardCut(sentence)
             print(">> input:\t"+sentence)
             print(">> key:\t\t"+key)
             print(">> output 1:\t"+"|".join(forwardCutted))
             print(">> output 2:\t"+"|".join(backwardCutted))
-            print()
+            forward_acc = calculateAcc(keyCutted,forwardCutted)
+            backward_acc = calculateAcc(keyCutted,backwardCutted)
+            forward_avg = forward_avg + forward_acc
+            backward_avg = backward_avg + backward_acc
+            print(">> output 1 accuracy: \t"+"{:5.2f}".format(forward_acc))
+            print(">> output 2 accuracy: \t"+"{:5.2f}".format(backward_acc))
         #end for
+        forward_avg = forward_avg/num_lines
+        backward_avg = backward_avg/num_lines
+        print()
+        print(">> output 1 avg: \t"+"{:5.2f}".format(forward_avg))
+        print(">> output 2 avg: \t"+"{:5.2f}".format(backward_avg))
         test_file.close()
     except FileNotFoundError:
         pass
