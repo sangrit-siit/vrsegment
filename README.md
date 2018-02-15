@@ -740,9 +740,7 @@ vr.test()
 We could summary the result statistically as
     - Accuracy
         - we defined accuracy by 
-\begin{align}
-    accuracy\ =\ min\{ \frac{number\ of\ correct\ words}{number\ of\ words\ in\ answer\ key}, \frac{number\ of\ correct\ word}{number\ of\ words\ in\ output}\}
-\end{align}
+            ![equation1](https://drive.google.com/file/d/1Yxj_6rJ39mEBq71f8hyFj8UCL2kw_4nY/view?usp=sharing)
 
 Example of accuracy calculation
 
