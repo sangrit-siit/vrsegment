@@ -740,7 +740,7 @@ vr.test()
 We could summary the result statistically as
     - Accuracy
         - we defined accuracy by 
-            ![equation1](https://drive.google.com/file/d/1Yxj_6rJ39mEBq71f8hyFj8UCL2kw_4nY/view?usp=sharing)
+            ![equation1](https://lh5.googleusercontent.com/P4aPA0ZMhsG7RP3fWEMk5mnooyijzV1nU0BHGUuO6MmO3yd9Hi5U53jnH0eABd3y62kpLPqcpXjrjw4Fbgp3=w1440-h735)
 
 Example of accuracy calculation
 
