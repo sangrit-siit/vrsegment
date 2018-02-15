@@ -937,7 +937,8 @@ Or 'วรรณยุกต์' cannot be the initial of a word.
 Discovering and including these rules could results in optimized algorithm in time complexity and more accurate algorithm.
 
 There also more things we would like to implement into this project such as
-    - paragraph parser
+ 
+    - Paragraph parser
 Which reads a paragraph, split into sentences then segment the words. This could be helpful when we want
 
     - Discovering Rules
@@ -951,9 +952,10 @@ And those are all our opinion to Thai Word Segmentation.
 This word segmentation library is a part of CSS432 Information Retrieval submitted to Dr.Virach Sornlertlamvanich.
 
 Group Members
+
     - Ms. Wari Maroengsit         5822771333
     - Mr. Kriddanai Roonguthai    5822780334
     - Mr. Kittikom Sangrit        5822790861
     - Ms. Papsineebhorn Sukchuen  5822771366
 
-Feb 15,2018
+Last edit Feb 15,2018
