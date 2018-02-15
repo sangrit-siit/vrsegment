@@ -3,6 +3,7 @@
 
 vrsegment is a python library for Thai word segmentation.
 This library consists of 
+
     - segmentor.py as the segmentor itself
     - src/test and src/key as test and key file
     - src/corpus as the dictionary of thai words, the method of gathering will be discussed later
