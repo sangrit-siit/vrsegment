@@ -41,7 +41,7 @@ This library consists of
    ```
     3. Use pip3 to install the library
    ```
-   pip3 install .
+   sudo pip3 install .
    ```
    
     4. You now have vrsegment library in your python3 library
