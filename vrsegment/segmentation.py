@@ -5,7 +5,7 @@ import sys
 import json
 
 dictionary_file_path = "/usr/local/vrsegment/dictionary.json"
-dictionary_file  = open(dictionary_file_path,'r')
+dictionary_file  = open(dictionary_file_path,'r', encoding="UTF-8")
 dictionary = json.load(dictionary_file)
 
 test_set_file = "/usr/local/vrsegment/test_set.txt"
