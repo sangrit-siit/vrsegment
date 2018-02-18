@@ -928,6 +928,7 @@ In where the test sentence file are kept.
 # PART 6. Conclusion & What's next?
 
 Thai word segmentation is hard because of ambiguity in many aspect as discussed above. We believe to improve the accuracy of the segmentation we need to consider solving these problems
+
     - How to define unambiguous definition of Thai words?
 Using [ORCHID Thai POS Tagging](http://www.academia.edu/1215347/ORCHID_Thai_part-of-speech_tagged_corpus) Table 5 : Thai POS Tagset as the standard of Thai language seems a very feasible option.
 
